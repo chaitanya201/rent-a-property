@@ -2,7 +2,7 @@ const dummyData = [
   {
     id:"1",
     name: "palmharbor",
-    location: "delhi",
+    location: "delhi,street no 10, random place",
     rent: 2095,
     type: "residential",
     noOfBeds: 1,
@@ -15,11 +15,11 @@ const dummyData = [
   {
     id:"2",
     name: "beverlyspring",
-    location: "mumbai",
+    location: "mumbai, street no 12, any place",
     rent: 2700,
     type: "commercial",
-    noOfBeds: 1,
-    noOfBathrooms: 3,
+    noOfBeds: 3,
+    noOfBathrooms: 5,
     area: "7×17 m2",
 
     pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0W48ACObaKPnVcCzBDYBIwfvLNP9ZTL12JQ&usqp=CAU",
@@ -28,10 +28,10 @@ const dummyData = [
   {
     id:"3",
     name: "faulknerave",
-    location: "pune",
+    location: "pune, street no 3, unknown ",
     rent: 3099,
     type: "mixedUse",
-    noOfBeds: 1,
+    noOfBeds: 3,
     noOfBathrooms: 3,
     area: "9×13 m2",
 
@@ -41,10 +41,10 @@ const dummyData = [
   {
     id:"4",
     name: "blueocean",
-    location: "kashmir",
+    location: "kashmir, street no 34, jedhe nagar",
     rent: 1500,
     type: "industrial",
-    noOfBeds: 1,
+    noOfBeds: 4,
     area: "12×10 m2",
     noOfBathrooms: 3,
     pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLnTvxPRKdm3DQfxa79KLTv7jYnzwz4QDPyA&usqp=CAU",
@@ -53,11 +53,11 @@ const dummyData = [
   {
     id:"5",
     name: "beaconhomes",
-    location: "mumbai",
+    location: "mumbai, street no 21, hadapsar",
     rent: 2500,
     type: "agriculture",
-    noOfBeds: 1,
-    noOfBathrooms: 3,
+    noOfBeds: 2,
+    noOfBathrooms: 2,
     area: "11×8 m2",
 
     pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IUqqiHbvvqH-fvL1WUWt1bG8dP4j1OEkFg&usqp=CAU",
@@ -66,11 +66,11 @@ const dummyData = [
   {
     id:"6",
     name: " bayviewestates",
-    location: "pune",
+    location: "pune, near bank of india, ambegaon",
     rent: 3500,
     type: "commercial",
     noOfBeds: 1,
-    noOfBathrooms: 3,
+    noOfBathrooms: 2,
     area: "6×9 m2",
 
     pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXkS5qfPM8eoo9KwR-3uUP1WXdguLBw7IgjA&usqp=CAU",
@@ -79,14 +79,26 @@ const dummyData = [
   {
     id:"7",
     name: "pyramidrealty",
-    location: "delhi",
+    location: "delhi, bibewadi, katraj",
     rent: 3400,
     type: "industrial",
-    noOfBeds: 1,
+    noOfBeds: 2,
     noOfBathrooms: 3,
     area: "7×5 m2",
     pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg8-wXiqGCTjS00XtrO6mjFokVkja4F4V2nw&usqp=CAU",
     date: "2023-05-10",
+  },
+  {
+    id:"8",
+    name: "randomhouse",
+    location: "kashmir, near vishwakarma college",
+    rent: 4000,
+    type: "industrial",
+    noOfBeds: 3,
+    noOfBathrooms: 3,
+    area: "7×5 m2",
+    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLRyE-PDwqZ4ESVNPOQtlB0aKO5FELlxE8ag&usqp=CAU",
+    date: "2023-06-10",
   },
 ];
 
