@@ -52,7 +52,6 @@ export default function PropertyFilter({
 
   const onFilter = (e) => {
     e.preventDefault();
-    console.log("filter..");
     setFilteredProperties(() =>
       properties.filter((property) => {
         if (
@@ -71,65 +70,66 @@ export default function PropertyFilter({
 
   return (
     <div>
-      <div className=" sm:bg-red-400 sm:flex-col md:bg-cyan-400 md:flex md:justify-between lg:flex lg:justify-between lg:bg-green-500 xl:bg-yellow-400 xl:flex xl:justify-between 2xl:flex 2xl:justify-between 2xl:bg-indigo-800 ">
-        <form onSubmit={onFilter}>
-          <div>
-            <h1>Location</h1>
-            <Select
-              value={selectedLocation}
-              options={locationOptions}
-              onChange={(e) => {
-                setSelectedLocation({ label: e.label, value: e.value });
-              }}
-            ></Select>
-          </div>
-          <div>
-            <h1>Date/When</h1>
-            <input
-              type={"date"}
-              defaultValue={date}
-              onChange={(e) => {
-                setDate(e.target.value);
-              }}
-            />
-          </div>
-          <div>
-            <h1>Price</h1>
-            <Select
-              options={priceOptions}
-              value={rentRange}
-              onChange={(e) => {
-                setRentRange({
-                  label: e.label,
-                  value: { min: e.value.min, max: e.value.max },
-                });
-              }}
-            ></Select>
-          </div>
-          <div className=" sm:flex-col space-x-4">
+      <div >
+        <div className="bg-white border rounded-md p-2 ">
+          <form onSubmit={onFilter} className=" sm:flex sm:justify-between ">
             <div>
-              <h1>Property Type</h1>
+              <h1>Location</h1>
               <Select
-                value={selectedPropertyType}
-                options={propertyTypeOptions}
+                value={selectedLocation}
+                options={locationOptions}
                 onChange={(e) => {
-                  setSelectedPropertyType({ label: e.label, value: e.value });
+                  setSelectedLocation({ label: e.label, value: e.value });
                 }}
               ></Select>
             </div>
-            <div className="pt-1 ">
+            <div>
+              <h1>Date/When</h1>
               <input
-                type="submit"
-                value={"Filter"}
-                className="bg-teal-500 p-2 rounded-lg"
+                type={"date"}
+                defaultValue={date}
+                onChange={(e) => {
+                  setDate(e.target.value);
+                }}
               />
             </div>
-          </div>
-        </form>
-        <div className=" ">
+            <div>
+              <h1>Price</h1>
+              <Select
+                options={priceOptions}
+                value={rentRange}
+                onChange={(e) => {
+                  setRentRange({
+                    label: e.label,
+                    value: { min: e.value.min, max: e.value.max },
+                  });
+                }}
+              ></Select>
+            </div>
+            <div className="flex space-x-2 ">
+              <div>
+                <h1>Property Type</h1>
+                <Select
+                  value={selectedPropertyType}
+                  options={propertyTypeOptions}
+                  onChange={(e) => {
+                    setSelectedPropertyType({ label: e.label, value: e.value });
+                  }}
+                ></Select>
+              </div>
+              <div className="pt-6 ">
+                <input
+                  type="submit"
+                  value={"Filter"}
+                  className="bg-teal-500 p-2 rounded-lg"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div className="flex justify-center ">
           <button
             onClick={() => {
-              console.log("clicked");
               setShowFilteredProperties(false);
             }}
             className="rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-purple-600 active:shadow-none shadow-lg bg-gradient-to-tr from-purple-600 to-purple-500 border-purple-700 text-white"

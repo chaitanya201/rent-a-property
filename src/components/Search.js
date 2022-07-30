@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 
-export default function Search({ properties,setFilteredProperties,setShowFilteredProperties }) {
+export default function Search({
+  properties,
+  setFilteredProperties,
+  setShowFilteredProperties,
+}) {
   const [query, setQuery] = useState("");
   const onSearch = (e) => {
     e.preventDefault();
-    console.log("filter..");
     setFilteredProperties(() =>
       properties.filter((property) => {
         if (
           property.location.includes(query.trim().toLowerCase()) ||
+          property.name.includes(query.trim().toLowerCase()) ||
           property.type.includes(query.trim().toLowerCase())
         ) {
           return property;
@@ -16,12 +20,13 @@ export default function Search({ properties,setFilteredProperties,setShowFiltere
       })
     );
     setShowFilteredProperties(true);
-  }
+  };
   return (
     <div>
-      <div>
-        <form onSubmit={onSearch}>
+      <div >
+        <form onSubmit={onSearch} className="flex">
           <input
+            className="p-3 rounded-md border"
             type="text"
             placeholder="Search property"
             value={query}
@@ -29,7 +34,13 @@ export default function Search({ properties,setFilteredProperties,setShowFiltere
               setQuery(e.target.value.trim());
             }}
           />
-          <input type="submit" value={"Search"} />
+          <div className="pl-5">
+            <input
+              type="submit"
+              className="bg-cyan-400 p-3 rounded-md"
+              value={"Search"}
+            />
+          </div>
         </form>
       </div>
     </div>
