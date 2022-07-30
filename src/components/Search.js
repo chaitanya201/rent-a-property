@@ -6,6 +6,11 @@ export default function Search({
   setShowFilteredProperties,
 }) {
   const [query, setQuery] = useState("");
+
+  // search function
+  // it search the given query string in all fields of the property.
+  // if any field of the property contains the query string then it will add it to final data
+  // and that data will be displayed.
   const onSearch = (e) => {
     e.preventDefault();
     setFilteredProperties(() =>

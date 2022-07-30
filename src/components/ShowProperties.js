@@ -1,9 +1,16 @@
 import React from "react";
 
 export default function ShowProperties({ properties = [] }) {
+
+  // if property array is empty then it will simply display the below message.
   if (properties.length === 0) {
     return <div>No Result found</div>;
   }
+
+  // this function basically displays all the properties in the form of grid
+  // all of the fields of a property are displayed. 
+  // this grid is fully responsive.
+  // it can be viewed from any type of device, it will not break.
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 sm:grid-cols-2">
       {properties.map((property) => {

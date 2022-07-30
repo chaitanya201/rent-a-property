@@ -5,10 +5,14 @@ export default function PropertyFilter({
   setFilteredProperties,
   setShowFilteredProperties,
 }) {
+
+  // selected location
   const [selectedLocation, setSelectedLocation] = useState({
     label: "Mumbai",
     value: "mumbai",
   });
+
+  // current date
   const d = new Date();
   const [date, setDate] = useState(
     `${d.getFullYear()}-${
@@ -16,14 +20,19 @@ export default function PropertyFilter({
     }-${d.getDate() < 10 ? "0" + d.getDate() : d.getDate()}`
   );
 
+  // selected rent range
   const [rentRange, setRentRange] = useState({
     label: "$500 - $1000",
     value: { min: 500, max: 1000 },
   });
+
+  // selected property type
   const [selectedPropertyType, setSelectedPropertyType] = useState({
     label: "Residential",
     value: "residential",
   });
+
+
   // Options
   // 1. Location Options
   const locationOptions = [
@@ -50,6 +59,11 @@ export default function PropertyFilter({
     { label: "Agriculture", value: "agriculture" },
   ];
 
+  // filter function
+  // four condition: 1. location 2. date 3.rent 4.property type
+  // date should be less than or equal to property's date
+  // it filters the properties according to above four condition and sets the data accordingly.
+  // if any of four condition fails then that property is discarded.
   const onFilter = (e) => {
     e.preventDefault();
     setFilteredProperties(() =>
@@ -67,6 +81,9 @@ export default function PropertyFilter({
     );
     setShowFilteredProperties(true);
   };
+
+
+  // the 'Clear' button clears all the filter and search results and shows the default result.
 
   return (
     <div>

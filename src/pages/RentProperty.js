@@ -4,9 +4,18 @@ import Search from "../components/Search";
 import ShowProperties from "../components/ShowProperties";
 import dummyData from "../data/dummyData";
 
+
+
+// this functions displays the rent a property page.
+
 export default function RentProperty() {
+
+  // list of filtered properties
   const [filteredProperties, setFilteredProperties] = useState([]);
+
   const [showFilteredProperties, setShowFilteredProperties] = useState(false);
+
+  // dummy data
   const [currentProperties, setCurrentProperties] = useState(dummyData);
 
   console.log("filtered properties", filteredProperties);
